@@ -2,3 +2,16 @@
 # SPDX-License-Identifier: Apache-2.0
 # extra settings to be merged into OpenTelemetry Collector configuration
 # do not delete this file
+exporters:
+  otlp/datakit:
+     endpoint: "datakit_ip:datakit_otel_port"
+     tls:
+      insecure: true
+      insecure_skip_verify: true
+
+service:
+  pipelines:
+    traces/datakit:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/datakit]
