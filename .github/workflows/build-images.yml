@@ -93,6 +93,9 @@ jobs:
           - file: ./test/Dockerfile
             tag_suffix: integrationTests
             context: ./
+          - file: ./guance/Dockerfile
+            tag_suffix: integrationTests
+            context: ./
 
     steps:
       - uses: actions/checkout@v3

@@ -846,7 +846,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 50M
+          memory: 30M
     restart: unless-stopped
     depends_on:
       otelcol:
