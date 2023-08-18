@@ -94,7 +94,7 @@ jobs:
             tag_suffix: integrationTests
             context: ./
           - file: ./src/guance/Dockerfile
-            tag_suffix: integrationTests
+            tag_suffix: datakit
             context: ./
 
     steps:
