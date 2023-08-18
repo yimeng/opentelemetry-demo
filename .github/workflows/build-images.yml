@@ -137,9 +137,6 @@ jobs:
             [worker.oci]
             max-parallelism = 2
 
-      - name: Extract branch name
-        run: echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-
       - name: Matrix Build and push demo images
         if: steps.check_changes.outputs.skip == 'false'
         uses: docker/build-push-action@v3.3.1
@@ -149,7 +146,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.DOCKERHUB_REPO }}:$BRANCH_NAME-${{matrix.file_tag.tag_suffix }}
-            ${{ env.GHCR_REPO }}:$BRANCH_NAME-${{ matrix.file_tag.tag_suffix }}
+            ${{ env.DOCKERHUB_REPO }}:${{ env.GITHUB_BASE_REF }}-${{matrix.file_tag.tag_suffix }}
+            ${{ env.GHCR_REPO }}:${{ env.GITHUB_BASE_REF }}-${{ matrix.file_tag.tag_suffix }}
           cache-from: type=gha
           cache-to: type=gha
