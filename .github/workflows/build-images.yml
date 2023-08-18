@@ -127,7 +127,7 @@ jobs:
             echo "skip=false >> $GITHUB_OUTPUT"
           fi
       - name: Override skip for push
-        if: ${{ inputs.push }}
+        if: ${{ !inputs.push }}
         run: echo "skip=false >> $GITHUB_OUTPUT"
         id: override_skip
       - name: Log in to the Container registry
