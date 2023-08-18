@@ -10,19 +10,7 @@ on:
     inputs:
       push:
         description: Should the images be pushed
-        default: false
-        required: false
-        type: boolean
-      version:
-        description: The version used when tagging the image
-        default: dev
-        required: false
-        type: string
-  workflow_dispatch:
-    inputs:
-      push:
-        description: Should the images be pushed
-        default: false
+        default: true
         required: false
         type: boolean
       version:
