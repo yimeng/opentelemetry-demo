@@ -22,6 +22,8 @@ on:
 
 jobs:
   build_and_push_images:
+    with:
+      push: true
     runs-on: ubuntu-latest
     permissions:
       contents: read
