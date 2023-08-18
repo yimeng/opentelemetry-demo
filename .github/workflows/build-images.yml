@@ -2,23 +2,23 @@
 # SPDX-License-Identifier: Apache-2.0
 
 on:
-  push:
-    paths:
-      - 'src/**'
-      - 'test/**'
-      - '.github/**'
-  workflow_call:
-    inputs:
-      push:
-        description: Should the images be pushed
-        default: false 
-        required: false
-        type: boolean
-      version:
-        description: The version used when tagging the image
-        default: dev
-        required: false
-        type: string
+  # push:
+  #   paths:
+  #     - 'src/**'
+  #     - 'test/**'
+  #     - '.github/**'
+  # workflow_call:
+  #   inputs:
+  #     push:
+  #       description: Should the images be pushed
+  #       default: false 
+  #       required: false
+  #       type: boolean
+  #     version:
+  #       description: The version used when tagging the image
+  #       default: dev
+  #       required: false
+  #       type: string
   workflow_dispatch:
    inputs:
       push:
