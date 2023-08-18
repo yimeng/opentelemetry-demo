@@ -2,10 +2,10 @@
 # SPDX-License-Identifier: Apache-2.0
 
 on:
-  # push:
-  #   paths:
-  #     - 'src/**'
-  #     - 'test/**'
+  push:
+    paths:
+      - 'src/**'
+      - 'test/**'
   workflow_dispatch:
     inputs:
        push:
@@ -135,7 +135,7 @@ jobs:
             [worker.oci]
             max-parallelism = 2
       - name: Matrix Build and push demo images
-        if: steps.check_changes.outputs.skip == 'false'
+        if: steps.check_changes.outputs.skip == ''
         uses: docker/build-push-action@v3.3.1
         with:
           context: ${{ matrix.file_tag.context }}
