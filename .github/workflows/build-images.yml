@@ -146,7 +146,7 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ env.DOCKERHUB_REPO }}:${{ env.GITHUB_BASE_REF }}-${{matrix.file_tag.tag_suffix }}
-            ${{ env.GHCR_REPO }}:${{ env.GITHUB_BASE_REF }}-${{ matrix.file_tag.tag_suffix }}
+            ${{ env.DOCKERHUB_REPO }}:${{ github.ref_name }}-${{matrix.file_tag.tag_suffix }}
+            ${{ env.GHCR_REPO }}:${{ github.ref_name }}-${{ matrix.file_tag.tag_suffix }}
           cache-from: type=gha
           cache-to: type=gha
