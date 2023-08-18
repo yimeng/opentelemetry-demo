@@ -18,6 +18,18 @@ on:
         default: dev
         required: false
         type: string
+  workflow_dispatch:
+    inputs:
+       push:
+         description: Should the images be pushed
+         default: true
+         required: false
+         type: boolean
+       version:
+         description: The version used when tagging the image
+         default: dev
+         required: false
+         type: string
 
 jobs:
   build_and_push_images:
