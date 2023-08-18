@@ -9,10 +9,11 @@ on:
   workflow_call:
     inputs:
       push:
-        description: Should the images be pushed
-        default: false
-        required: false
-        type: boolean
+        true
+       # description: Should the images be pushed
+       # default: false
+       # required: false
+       # type: boolean
       version:
         description: The version used when tagging the image
         default: dev
