@@ -10,7 +10,7 @@ on:
     inputs:
       push:
         description: Should the images be pushed
-        default: true
+        default: false
         required: false
         type: boolean
       version:
